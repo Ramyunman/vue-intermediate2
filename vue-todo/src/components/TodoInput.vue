@@ -35,8 +35,9 @@ export default {
   methods: {
     addTodo() {
         if(this.newTodoItem !== '') {
-            this.$emit('addTodoItem', this.newTodoItem); 
-            this.cleaerInput();
+           const item = this.newTodoItem.trim();
+           this.$store.commit('addOneItem', item);
+           this.cleaerInput();
         } else {
             this.showModal = !this.showModal;
         }

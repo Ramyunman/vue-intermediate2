@@ -34,7 +34,7 @@ export const store = new Vuex.Store({
 		},
 		removeOneItem(state, payload) {
 			state.todoItems.splice(payload.index, 1);
-        localStorage.removeItem(payload.todoItem.item);
+        	localStorage.removeItem(payload.todoItem.item);
 		},
 		toggleOneItem(state, payload) {
 			state.todoItems[payload.index].completed = !state.todoItems[payload.index].completed;

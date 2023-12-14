@@ -1,6 +1,6 @@
 <template>
     <div class="inputBox shadow">
-        <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
+        <input type="text" v-model="newTodoItem" @keyup.enter="addTodo">
         <span class="addContainer" v-on:click="addTodo">
             <i class="fa-solid fa-plus addBtn"></i>
         </span>
@@ -10,15 +10,14 @@
             you can use custom content here to overwrite
             default content
             -->
-            <template v-slot:header>
-                <h3>경고!
-                    <i class="closeModalBtn fa-regular fa-circle-xmark" 
-                        @click="showModal = false"></i>
-                </h3>
-            </template>
-            <template v-slot:body>
-                <h3>아무것도 입력하지 않았습니다.</h3>
-            </template>
+            <h3 slot="header">
+                경고
+                <i class="closeModalBtn fa fa-times"
+                    aria-hidden="true"
+                    @click="showModal = false">
+                </i>
+            </h3>
+            <p slot="body">할 일을 입력하세요.</p>
         </AlertModal>
     </div>
 </template>

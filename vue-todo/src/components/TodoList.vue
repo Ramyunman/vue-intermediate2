@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <TransitionGroup name="list" tag="ul">
-            <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" class="shadow">
+    <section>
+        <transition-group name="list" tag="ul">
+            <li v-for="(todoItem, index) in this.$store.state.todoItems" v-bind:key="todoItem.item" class="shadow">
                 <i class="checkBtn fa-solid fa-check" v-bind:class="{checkBtnCompleted: todoItem.completed}"
                     v-on:click="toggleComplete(todoItem, index)"></i>
                 <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
@@ -9,8 +9,8 @@
                     <i class="fa-solid fa-trash-can"></i>
                 </span>
             </li>
-        </TransitionGroup>
-    </div>
+        </transition-group>
+    </section>
 </template>
 
 <script>

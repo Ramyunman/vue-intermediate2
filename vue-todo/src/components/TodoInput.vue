@@ -5,7 +5,7 @@
             <i class="fa-solid fa-plus addBtn"></i>
         </span>
 
-        <Modal v-if="showModal" @close="showModal = false">
+        <AlertModal v-if="showModal" @close="showModal = false">
             <!--
             you can use custom content here to overwrite
             default content
@@ -19,12 +19,12 @@
             <template v-slot:body>
                 <h3>아무것도 입력하지 않았습니다.</h3>
             </template>
-        </Modal>
+        </AlertModal>
     </div>
 </template>
 
 <script>
-import Modal from './common/Modal.vue'
+import AlertModal from './common/AlertModal.vue'
 
 export default {
   data() {
@@ -47,7 +47,7 @@ export default {
     }
   },
   components: {
-    Modal
+    AlertModal
   }    
 }
 
